@@ -1,16 +1,109 @@
-# React + Vite
+Image Gallery with Pagination
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple, responsive image gallery built with React and Tailwind CSS. It fetches placeholder images from the Lorem Picsum API and implements client-side pagination.
 
-Currently, two official plugins are available:
+🚀 Key Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+API Integration: Fetches image data using axios from https://picsum.photos/v2/list.
 
-## React Compiler
+Pagination: Displays 8 images per page and allows navigation using "Next" and "Prev" buttons.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Responsive Design: Styled using Tailwind CSS to look great on all screen sizes.
 
-## Expanding the ESLint configuration
+External Links: Clicking an image opens the original image URL in a new tab.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+🛠️ Tech Stack
+
+Framework: React
+
+Styling: Tailwind CSS
+
+HTTP Client: Axios
+
+Icons: Lucide React
+
+📦 File Structure
+
+The project assumes a standard Create React App or Vite structure:
+
+├── node_modules/
+├── public/
+│   └── index.html
+├── src/
+│   ├── components/
+│   │   └── Navbar.jsx  <-- Placeholder component
+│   └── App.jsx         <-- Main component (the code you provided)
+├── package.json
+└── README.md
+
+
+⚙️ Installation and Setup
+
+Follow these steps to get the project running locally.
+
+Prerequisites
+
+Node.js (18+ recommended)
+
+npm or yarn
+
+1. Install Dependencies
+
+You will need the following packages installed in your project root:
+
+# Install required libraries
+npm install react react-dom axios lucide-react
+
+# Or using yarn
+yarn add react react-dom axios lucide-react
+
+
+2. File Content
+
+Copy the content below into the respective files in your src/ directory.
+
+src/App.jsx
+
+This file contains the main logic and image grid.
+
+src/components/Navbar.jsx
+
+Your original code imports Navbar, so a simple component is needed:
+
+import React from 'react';
+
+const Navbar = ({ ind }) => {
+  return (
+    <nav className="p-4 bg-gray-900 shadow-md">
+      <div className="container mx-auto flex justify-between items-center">
+        <h1 className="text-xl font-bold text-amber-500">Image Gallery (Page {ind})</h1>
+        <p className="text-sm text-gray-400 hidden sm:block">
+          Powered by Lorem Picsum API
+        </p>
+      </div>
+    </nav>
+  );
+};
+
+export default Navbar;
+
+
+3. Tailwind CSS Setup
+
+Ensure you have Tailwind CSS configured in your project. If you are using a modern setup (like Vite), you typically add the following directives to your main CSS file (e.g., src/index.css):
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+🚀 Running the App
+
+After setup, run the development server:
+
+npm run dev
+# or
+npm start
+
+
+The application should now be accessible at http://localhost:3000 (or the port specified by your tool).
